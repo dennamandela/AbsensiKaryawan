@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edit Employee</title>
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+    <div class="card-header">
+        <a href="/employee/home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-down-left"><polyline points="9 10 4 15 9 20"></polyline><path d="M20 4v7a4 4 0 0 1-4 4H4"></path></svg>Back</a>
+    </div>
+        <div class="card-body">
+            <form action="#" th:action="@{/employee/update/{id}(id=${employee.employeeId})}" th:object="${employee}" method="post">
+                <div class="form-group">
+                    <label for="employeeName">Employee Name</label>
+                    <input type="text" class="form-control" th:field="*{employeeName}" id="employeeName" placeholder="Employee Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" th:field="*{email}" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" th:field="*{password}" id="password" placeholder="Password" required>
+                </div>
+                <input class="btn btn-info" type="submit" name="edit" value="Edit"/>
+            </form>
+        </div>
+    </body>
+</html>
